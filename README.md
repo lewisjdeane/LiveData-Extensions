@@ -2,7 +2,7 @@
 
 An Android library allowing you to write beautifully concise and clean code for complex LiveData transformations.
 
-```
+```kotlin
 /** Instead of `Transformations.map` */
 liveData.map { data -> /* Do something with data */ }
 
@@ -25,7 +25,7 @@ liveA.mapWith(liveB, liveC, liveD, liveE) { a, b, c, d, e ->
 
 In your top-level build.gradle make sure you have jitpack listed as a repository:
 
-```
+```groovy
 allprojects {
     repositories {
         maven {
@@ -38,7 +38,7 @@ allprojects {
 
 In your app-specific build.gradle:
 
-```
+```groovy
 implementation 'com.github.lewisjdeane:LiveData-Extensions:1.0'
 ```
 
@@ -46,12 +46,12 @@ implementation 'com.github.lewisjdeane:LiveData-Extensions:1.0'
 
 This library allows you write complex LiveData manipulations in a clean and concise way:
 
-```
+```kotlin
 Transformations.map(liveA, liveB, liveC, liveD, liveE) { a, b, c, d, e ->
     // method(a, b, c, d, e)
 }
 
-or equally,
+// or equally,
 
 liveA.mapWith(liveB, liveC, liveD, liveE) { a, b, c, d, e ->
     // method(a, b, c, d, e)
@@ -60,7 +60,7 @@ liveA.mapWith(liveB, liveC, liveD, liveE) { a, b, c, d, e ->
 
 instead of the horrible mess of nesting you'd need to write before:
 
-```
+```kotlin
 Transformations.switchMap(liveA) { a ->
     Transformations.switchMap(liveB) { b ->
         Transformations.switchMap(liveC) { c ->
@@ -78,14 +78,14 @@ Transformations.switchMap(liveA) { a ->
 
 With this library you can write clearer map and switchMap statements:
 
-```
+```kotlin
 liveData.map { data -> /* Do something with data */ }
 liveData.switchMap { data -> /* Do something with data */ }
 ```
 
 Which is the equivalent to:
 
-```
+```kotlin
 Transformations.map(liveData) { data ->
     // Do something with data
 }
@@ -103,7 +103,7 @@ Previously you may have had a huge nested block of maps and switchMaps to unbox 
 
 With this library, Transformations.map now takes up to 6 parameters so you can now write:
 
-```
+```kotlin
 Transformations.map(liveA, liveB, liveC, liveD, liveE, liveF) { a, b, c, d, e, f ->
     // method(a, b, c, d, e, f)
 }
@@ -111,7 +111,7 @@ Transformations.map(liveA, liveB, liveC, liveD, liveE, liveF) { a, b, c, d, e, f
 
 Instead of the far less-readable:
 
-```
+```kotlin
 Transformations.switchMap(liveA) { a ->
     Transformations.switchMap(liveB) { b ->
         Transformations.switchMap(liveC) { c ->
@@ -133,7 +133,7 @@ If you prefer to use an extension function on a LiveData directly then if you wa
 
 With `mapWith`, you'd write:
 
-```
+```kotlin
 liveA.mapWith(liveB, liveC, liveD, liveE, liveF) { a, b, c, d, e, f ->
     // method(a, b, c, d, e, f)
 }
@@ -141,7 +141,7 @@ liveA.mapWith(liveB, liveC, liveD, liveE, liveF) { a, b, c, d, e, f ->
 
 Instead of the far less-readable:
 
-```
+```kotlin
 Transformations.switchMap(liveA) { a ->
     Transformations.switchMap(liveB) { b ->
         Transformations.switchMap(liveC) { c ->
