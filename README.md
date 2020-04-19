@@ -18,7 +18,7 @@ allprojects {
 In your app-specific build.gradle:
 
 ```
-implementation 'com.github.lewisjdeane:VariableHintEditText:-SNAPSHOT'
+implementation 'com.github.lewisjdeane:LiveData-Extensions:1.0'
 ```
 
 # License
