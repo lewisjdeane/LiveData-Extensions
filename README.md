@@ -1,6 +1,6 @@
 # LiveData Extensions
 
-Write beautifully concise and clean code for complex LiveData transformations:
+An Android library allowing you to write beautifully concise and clean code for complex LiveData transformations.
 
 ```
 /** Instead of `Transformations.map` */
